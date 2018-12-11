@@ -28,15 +28,15 @@ input.addEventListener('input', function() {
 // Calc input
 const maceCalc =  function(value) {
   let convertToGcal = value * coefficient;
-  gCal = convertToGcal;
-  result = Math.round(convertToGcal * rate);
+  gCal = convertToGcal.toFixed(3);
+  result = (convertToGcal * rate).toFixed(2);
   return result;
 };
 
 const showResult = function() {
   if(result > 0) {
-    document.querySelector('.panel-body p').innerHTML = '<strong>' + result + '</strong> грн' + 
-    '<br>' + '<strong>' + gCal + '</strong> Гкал';
+    document.querySelector('.panel-body p').innerHTML =  '<strong>' + gCal + '</strong> Гкал' + '<br>' +
+    '<strong>' + result + '</strong> грн';
     resultEl.style.display = 'block';
   }
 }
